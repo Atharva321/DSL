@@ -1,2 +1,2 @@
 This is a data that is available in the file.
-File transfered Successfully
+File transferred Successfully.
