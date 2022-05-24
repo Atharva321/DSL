@@ -19,11 +19,6 @@ int i;
 for (i = 0; i < NET_BUF_SIZE; i++)
 b[i] = '\0';
 }
-Class: L.Y. B. Tech (Computer)
-Practical No.8
-Name: Atharva Patil Batch: LY2
-PRN: 1841038
-Subject: DS Lab
 // function to encrypt
 char Cipher(char ch)
 {
