@@ -41,6 +41,7 @@ public class Client
 					break;
 				}
 				String responseLine = is.readLine();
+				System.out.println("Server returns its square as: "+ responseLine);
 			}
 			os.close();
 			is.close(); clientSocket.close();
