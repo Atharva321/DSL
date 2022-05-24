@@ -20,7 +20,7 @@ DBInterface DI = (DBInterface)r1.lookup("DBServ");
 do 
 { 
 // System.out.println("\n:Menu:" + "\n1.Send Input Strings\n2.Display  
-ConcatenatedString\n" + "\nEnteryourchoice:"); 
+ConcatenatedString(\n" + "\nEnteryourchoice:"); 
 System.out.println("\n\t\t*** Menu ***"); 
 System.out.println("\n 1.Send Input Strings"); 
 System.out.println("\n 2.Display Reversed String "); 
