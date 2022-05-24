@@ -1,4 +1,4 @@
-#include<arpa/inet.h>
+#include <arpa/inet.h>
 #include <netinet/in.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -20,14 +20,10 @@ for (i = 0; i < NET_BUF_SIZE; i++)
 b[i] = '\0';
 }
 Class: L.Y. B. Tech (Computer)
-
 Practical No.8
-
 Name: Atharva Patil Batch: LY2
 PRN: 1841038
-
 Subject: DS Lab
-
 // function to encrypt
 char Cipher(char ch)
 {
@@ -39,7 +35,7 @@ int sendFile(FILE* fp, char* buf, int s)
 int i, len;
 if (fp == NULL) {
 strcpy(buf, nofile);
-len = strlen(nofile);
+ len = strlen(nofile);
 buf[len] = EOF;
 for (i = 0; i <= len; i++)
 buf[i] = Cipher(buf[i]);
@@ -47,7 +43,7 @@ return 1;
 }
 char ch, ch2;
 for (i = 0; i < s; i++) {
-ch = fgetc(fp);
+ ch = fgetc(fp);
 ch2 = Cipher(ch);
 buf[i] = ch2;
 if (ch == EOF)
@@ -66,17 +62,16 @@ addr_con.sin_port = htons(PORT_NO);
 addr_con.sin_addr.s_addr = INADDR_ANY;
 char net_buf[NET_BUF_SIZE];
 FILE* fp;
-
 // socket()
 sockfd = socket(AF_INET, SOCK_DGRAM, IP_PROTOCOL);
 if (sockfd < 0)
 printf("\nfile descriptor not received!!\n");
-else
+ else
 printf("\nfile descriptor %d received\n", sockfd);
 // bind()
 if (bind(sockfd, (struct sockaddr*)&addr_con, sizeof(addr_con)) == 0)
 printf("\nSuccessfully binded!\n");
-else
+ else
 printf("\nBinding Failed!\n");
 while (1) {
 printf("\nWaiting for file name...\n");
@@ -89,16 +84,15 @@ fp = fopen(net_buf, "r");
 printf("\nFile Name Received: %s\n", net_buf);
 if (fp == NULL)
 printf("\nFile open failed!\n");
-else
+ else
 printf("\nFile Successfully opened!\n"); while (1) {
 // process
 if (sendFile(fp, net_buf, NET_BUF_SIZE)) {
 sendto(sockfd, net_buf, NET_BUF_SIZE,
 sendrecvflag,
 (struct sockaddr*)&addr_con, addrlen);
-break;
+ break;
 }
-
 // send
 sendto(sockfd, net_buf, NET_BUF_SIZE,
 sendrecvflag,
