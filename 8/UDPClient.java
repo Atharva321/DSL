@@ -1,7 +1,7 @@
 
 import java.io.*;
 import java.net.*;
-class SecondRPCClient {
+class UDPClient {
     public static void main(String[] args) throws Exception { 
         Socket sock = new Socket("127.0.0.1",3000);
         BufferedReader keyRead = new BufferedReader(new InputStreamReader(System.in)); 

@@ -1,6 +1,6 @@
 import java.io.*;
 import java.net.*; 
-class SecondRPCServer {
+class UDPServer {
     public static void main(String[] args)throws Exception { 
         ServerSocket sersock = new ServerSocket(3000);
         System.out.println("Server ready");

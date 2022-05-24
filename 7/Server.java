@@ -9,17 +9,17 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors; 
 import java.util.logging.Level; 
 import java.util.logging.Logger;
-public class SevenServer { 
+public class Server { 
 	int port;
 	ServerSocket server=null;
 	Socket client=null; 
 	ExecutorService pool = null; 
 	int clientcount=0;
 	public static void main(String[] args) throws IOException { 
-		SevenServer serverobj=new SevenServer(5000); 
+		Server serverobj=new Server(5000); 
 		serverobj.startServer();
 	}
-	SevenServer(int port){ 
+	Server(int port){ 
 		this.port=port; pool = Executors.newFixedThreadPool(5);
 	}
 	public void startServer() throws IOException { 
@@ -35,14 +35,14 @@ public class SevenServer {
 		}
 	}
 	private static class ServerThread implements Runnable {
-		SevenServer server=null;
+		Server server=null;
 		Socket client=null;
 		BufferedReader cin;
 		PrintStream cout;
 		Scanner sc=new Scanner(System.in);
 		int id;
 		String s;
-		ServerThread(Socket client, int count ,SevenServer server ) throws IOException {
+		ServerThread(Socket client, int count ,Server server ) throws IOException {
 			this.client=client; 
 			this.server=server; 
 			this.id=count;
