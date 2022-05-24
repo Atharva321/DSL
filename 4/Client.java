@@ -18,7 +18,6 @@ public class Client
             DBInterface DI=(DBInterface)r1.lookup("DBServ");
             do
             { 
-                System.out.println("\n:Menu:"+"\n1.SendInputString s\n 2.DisplayConcatenatedString\n"+"\nEnteryourchoice:");
                 System.out.println("\n\t\t***Menu***");
                 System.out.println("\n1.SendInputStrings");
                 System.out.println("\n2.DisplayReversedString");
