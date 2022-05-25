@@ -1,3 +1,23 @@
+Instructions to run Distributed Application: 
+
+1. Compile all java files
+
+javac *.java
+
+2. Create Stub and Skeleton class file for RoomBookingServer
+
+rmic RoomBookingServer
+
+3. Run RMIC Registry
+
+rmiregistry &
+
+4. Run RoomBookingServer
+
+java RoomBookingServer
+
+
+
 1- Interface public interface HotelInterface extends Remote 
 { 
 public void book (int NumberOfGuests, int NumberOfNights, String 
